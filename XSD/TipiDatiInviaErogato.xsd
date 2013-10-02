@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.regione.toscana.it.org/sisrt/generic"
+	    xmlns="http://www.w3.org/2001/XMLSchema" 
+	    xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic"
+	    elementFormDefault="qualified" 
+	    attributeFormDefault="unqualified">
+
+	<annotation>
+		<documentation>Versione 1.2</documentation>
+	</annotation>
+	<simpleType name="nreType">
+		<restriction base="string">
+			<minLength value="15" />
+			<maxLength value="15" />
+		</restriction>
+	</simpleType>
+	<simpleType name="pwdType">
+		<restriction base="string">
+			<minLength value="0" />
+			<maxLength value="16" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoOperazioneType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="2" />
+		</restriction>
+	</simpleType>
+	<simpleType name="dichTargaDoppiaType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="codRegioneType">
+		<restriction base="string">
+			<minLength value="3" />
+			<maxLength value="3" />
+		</restriction>
+	</simpleType>
+	<simpleType name="codSpecializzazioneType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="cfMedicoType">
+		<restriction base="string">
+			<minLength value="0" />
+			<maxLength value="16" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoInvioType">
+		<restriction base="string">
+			<minLength value="3" />
+			<maxLength value="3" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoRicettaType">
+		<restriction base="string">
+			<minLength value="2" />
+			<maxLength value="2" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoPrescType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoVisitaType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="indicPrescType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="prioritaType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="dataOraType">
+		<restriction base="string">
+			<minLength value="19" />
+			<maxLength value="19" />
+		</restriction>
+	</simpleType>
+	<simpleType name="codEsitoType">
+		<restriction base="string">
+			<pattern value="[0-9]{4}" />
+		</restriction>
+	</simpleType>
+	<simpleType name="stringType">
+		<restriction base="string" />
+	</simpleType>
+	<simpleType name="string256Type">
+		<restriction base="string">
+			<maxLength value="256" />
+		</restriction>
+	</simpleType>
+	<simpleType name="string16Type">
+		<restriction base="string">
+
+			<maxLength value="16"></maxLength>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="string10Type">
+		<restriction base="string">
+			<maxLength value="10"></maxLength>
+		</restriction>
+	</simpleType>
+	<simpleType name="string8Type">
+		<restriction base="string">
+			<maxLength value="8"></maxLength>
+		</restriction>
+	</simpleType>
+	<simpleType name="integerType">
+		<restriction base="string">
+			<pattern value="[0-9]" />
+		</restriction>
+	</simpleType>
+	<complexType name="dettaglioPrescrizioneInvioErogatoType">
+		<sequence>
+			<element name="codProdPrest" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Codice prodotto farmaceutico (AIC) o codice
+						prestazione specialistica
+					</documentation>
+				</annotation>
+			</element>
+			<element name="codGruppoEquival" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Codice del gruppo equivalente
+					</documentation>
+				</annotation>
+			</element>
+			<element name="descrTestoLiberoNote" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Descrizione testuale della prestazione
+						specialistica
+					</documentation>
+				</annotation>
+			</element>
+			<element name="codProdPrestErog" type="string">
+				<annotation>
+					<documentation>
+						Codice AIC del farmaco o codice della
+						prestazione effettivamente erogata
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="descrProdPrestErog" type="string">
+				<annotation>
+					<documentation>
+						Descrizione del farmaco o della prestazione
+						effettivamente erogata
+					</documentation>
+				</annotation>
+			</element>
+			<element name="flagErog" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Riferito a cio' che e' stato inserito nel campo
+						codProdPrestErog: A - codice AIC aggiornato, S -
+						sostituzione AIC, V - variazione codice
+						prestazione
+					</documentation>
+				</annotation>
+			</element>
+			<element name="motivazSostProd" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Motivazione in caso di valore “S” in flagErog: 1
+						- etico con generico, 2 - generico con generico,
+						3 - generico irreperibile
+					</documentation>
+				</annotation>
+			</element>
+			<element name="targa" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Numero identificativo univoco della singola
+						confezione
+					</documentation>
+				</annotation>
+			</element>
+			<element name="dichTargaDoppia"
+				type="sisrt:dichTargaDoppiaType" minOccurs="0">
+				<annotation>
+					<documentation>
+						Dichiarazione del farmacista di erogazione di un
+						farmaco il cui codice targatura e' gia'
+						esistente presso il SAC
+					</documentation>
+				</annotation>
+			</element>
+			<element name="codBranca" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Codice della branca specialistica della
+						prestazione
+					</documentation>
+				</annotation>
+			</element>
+			<element name="tipoErogazioneFarm" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Tipologia di erogazione dei farmaci. Valori
+						ammessi: C - distribuzione per conto, D -
+						distribuzione diretta, A - assist integrativa
+						domiciliare, I - assist integrativa
+					</documentation>
+				</annotation>
+
+			</element>
+			<element name="prezzo" type="string">
+				<annotation>
+					<documentation>
+						Prezzo al pubblico del prodotto farmaceutico o
+						Tariffa della prestazione specialistica
+					</documentation>
+				</annotation>
+			</element>
+			<element name="ticketConfezione" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Ticket della confezione farmaceutica
+					</documentation>
+				</annotation>
+			</element>
+			<element name="diffGenerico" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Differenza con generico della confezione
+						farmaceutica
+					</documentation>
+				</annotation>
+			</element>
+			<element name="quantitaErogata" type="string">
+				<annotation>
+					<documentation>
+						Quantita' effettivamente erogata
+					</documentation>
+				</annotation>
+			</element>
+			<element name="dataIniErog" type="sisrt:dataOraType">
+				<annotation>
+					<documentation>
+						Data di inizio erogazione
+					</documentation>
+				</annotation>
+			</element>
+			<element name="dataFineErog" type="sisrt:dataOraType">
+				<annotation>
+					<documentation>
+						Data di fine erogazione
+					</documentation>
+				</annotation>
+			</element>
+			<element name="prezzoRimborso" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Prezzo di rimborso al laboratorio
+					</documentation>
+				</annotation>
+			</element>
+			<element name="onereProd" type="string" minOccurs="0">
+				<annotation>
+
+					<documentation>
+						Onere di distribuzione del prodotto farmaceutico
+						erogato in DPC
+					</documentation>
+				</annotation>
+			</element>
+			<element name="scontoSSN" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Sconto riconosciuto al SSN
+					</documentation>
+				</annotation>
+			</element>
+			<element name="extraScontoIndustria" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Sconto obbligatorio dello 0,6% sul prezzo al
+						pubblico lordo con IVA a carico dell'industria
+						produttrice, per i medicinali erogati in regime
+						SSN
+					</documentation>
+				</annotation>
+			</element>
+			<element name="extraScontoPayback" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Sconto che il SSN nel procedere alla
+						corresponsione di quanto dovuto alle farmacie
+						trattiene per un importo corrispondente allo
+						0,6% del prezzo al pubblico comprensivo dell'IVA
+					</documentation>
+				</annotation>
+			</element>
+			<element name="extraScontoDL31052010" type="string"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Sconto introdotto nel DL 31.05.2010
+					</documentation>
+				</annotation>
+			</element>
+			<element name="codPresidio" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Codice del presidio di erogazione della
+						prestazione
+					</documentation>
+				</annotation>
+			</element>
+			<element name="codReparto" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Codice del reparto di erogazione della
+						prestazione
+					</documentation>
+				</annotation>
+			</element>
+                <element name="codReferto" type="sisrt:codRefertoType" minOccurs="0">
+				</element>
+            <element name="spa2Eroga" type="sisrt:spa2ErogaType" minOccurs="0"></element>
+            <element name="dispFust1" type="sisrt:string256Type"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Campo per futuro utilizzo
+					</documentation>
+				</annotation>
+			</element>
+			<element name="dispFust2" type="sisrt:string256Type"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Campo per futuro utilizzo
+					</documentation>
+				</annotation>
+			</element>
+			<element name="dispFust3" type="sisrt:string256Type"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						Campo per futuro utilizzo
+					</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="elencoDettagliPrescrInviiErogatoType">
+		<sequence>
+			<element name="DettaglioPrescrizioneInvioErogato" type="sisrt:dettaglioPrescrizioneInvioErogatoType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="erroreRicettaType">
+		<sequence>
+			<element name="codEsito" type="sisrt:codEsitoType" />
+			<element name="esito" type="string" minOccurs="0" />
+			<element name="progPresc" type="string" minOccurs="0" />
+			<element name="tipoErrore" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="elencoErroriRicetteType">
+		<sequence>
+			<element name="ErroreRicetta" type="sisrt:erroreRicettaType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="comunicazioneType">
+		<sequence>
+			<element name="codice" type="string">
+				<annotation>
+
+					<documentation>Codice della comunicazione di servizio
+					</documentation>
+				</annotation>
+			</element>
+			<element name="messaggio" type="string">
+				<annotation>
+					<documentation>Messaggio di servizio
+					</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="elencoComunicazioniType">
+		<sequence>
+			<element name="Comunicazione" type="sisrt:comunicazioneType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="spa1ErogaType">
+		<sequence>
+			<element name="regresu" minOccurs="0">
+				<annotation>
+					<documentation>Regione di residenza dell'utente</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+
+						<length value="3"></length>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="proresu" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Provincia di residenza dell'utente.</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+
+						<length value="3"></length>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="comresu" minOccurs="0">
+				<annotation>
+					<documentation>
+						Comune di residenza dell'utente
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+
+						<length value="3"></length>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="c_digit" minOccurs="0">
+				<annotation>
+					<documentation>
+						Contributo alla digitalizzazione dovuto
+						dall’utente
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+						<maxLength value="8"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="dservice" minOccurs="0">
+				<annotation>
+					<documentation>
+						L'informazione riportata ha lo scopo, oltre che
+						di individuare le prestazioni di day service, di
+						ricostruire insieme all'identificativo
+						dell'utente e alla data di prestazione tutte le
+						ricette e quindi le prestazioni afferenti ad un
+						medesimo episodio di day service. 0 = no day
+						service 1 = 1° ricetta del percorso day service
+						2 = ricette intermedie del percorso day service
+						3 = ultima ricetta del percorso di day service 4
+						= unica ricetta per prestazione iniziale e
+						finale di day service Il codice 4 è da
+						utilizzare solo nel caso in cui il percorso di
+						day service sia contenuto in un'unica ricetta.
+						Il codice 2 identifica tutte le ricette
+						intermedie del percorso che, a parità di
+						didentificativo dell'utente e sulla base della
+						data di erogazione, vengono attribuite ad un
+						unico percorso di day service assieme alla
+						specifica 1° ricetta e ultima ricetta
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+
+						<length value="1"></length>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="pacc" minOccurs="0">
+				<annotation>
+					<documentation>
+						Percorsi ambulatoriali complessi e coordinati.
+						In questo campo viene indicato il PACC attivato.
+						I valori ammessi sono riportati nella tabella
+						PACC messa a disposizione sui NAL.
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+
+						<maxLength value="3"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="tipologia_erog" minOccurs="0">
+				<annotation>
+					<documentation>
+						tipologiaerogatore 1 = pubblico 2 = privato
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+						<maxLength value="1"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="finalita" minOccurs="0">
+				<annotation>
+					<documentation>
+						Finalità della prestazione. 10 = prestazioni di
+						screening oncologico 20 = prestazioni per
+						donazione 40 = prestazioni di procreazione
+						medicalmente assistita 50 = prestazioni
+						afferenti al percorso CORD 00 = altro
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+
+						<length value="2"></length>
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="spa2ErogaType">
+		<sequence>
+			<element name="speciali" minOccurs="0">
+                <annotation>
+                	<documentation>Specialità di erogazione</documentation></annotation>
+                <simpleType>
+					<restriction base="string">
+						<maxLength value="3"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="disciplina" minOccurs="0">
+                <annotation>
+                	<documentation>Codice della disciplina che qualifica la prestazione ambulatoriale</documentation></annotation>
+                <simpleType>
+					<restriction base="string">
+						<maxLength value="2"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="tipopr" minOccurs="0">
+                <annotation>
+                	<documentation>Tipologia della prestazione erogata/prodotto somministrato</documentation></annotation>
+                <simpleType>
+					<restriction base="string">
+						<maxLength value="1"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="numacc" minOccurs="0">
+                <annotation>
+                	<documentation>Numero degli accessi alla
+Prestazione/
+somministrazione prodotto</documentation></annotation>
+                <simpleType>
+					<restriction base="string">
+						<maxLength value="3"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="convenzione" minOccurs="0">
+                <annotation>
+                	<documentation>Prestazione soggetta a convenzione</documentation></annotation>
+                <simpleType>
+					<restriction base="string">
+						<maxLength value="1"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="compensa" minOccurs="0">
+                <annotation>
+                	<documentation>Posizione della prestazione rispetto alla compensazione</documentation></annotation>
+                <simpleType>
+					<restriction base="string">
+						<maxLength value="1"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="tipoerog" minOccurs="0">
+                <annotation>
+                	<documentation>Tipologia del medico erogatore della prestazione in regime libero professionale</documentation></annotation>
+                <simpleType>
+					<restriction base="string">
+						<maxLength value="1"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="mra_erog" minOccurs="0">
+                <annotation>
+                	<documentation>MRA_ struttura erogatrice</documentation></annotation>
+                <simpleType>
+					<restriction base="string">
+						<maxLength value="15"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+				</sequence>
+	</complexType>
+	<simpleType name="codPagIrisType">
+		<restriction base="string">
+			<maxLength value="20"></maxLength>
+		</restriction>
+	</simpleType>
+	<simpleType name="codRefertoType">
+		<restriction base="string">
+			<maxLength value="20"></maxLength>
+		</restriction>
+	</simpleType>
+
+	
+</schema>

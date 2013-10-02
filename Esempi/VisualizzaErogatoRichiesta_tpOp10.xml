@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sisrt-ric:VisualizzaErogatoRichiesta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/VisualizzaErogatoRichiesta.xsd ">
+  <sisrt-ric:codiceAslErogatore>109</sisrt-ric:codiceAslErogatore>
+  <sisrt-ric:codiceSsaErogatore>109</sisrt-ric:codiceSsaErogatore>
+  <sisrt-ric:pwd>CCCDDD11L45F656Y</sisrt-ric:pwd>
+  <sisrt-ric:nre>090123456789012</sisrt-ric:nre>
+  <sisrt-ric:cfAssistito>PPRPPR26S16D118H</sisrt-ric:cfAssistito>
+  <sisrt-ric:tipoOperazione>10</sisrt-ric:tipoOperazione>
+  <sisrt-ric:flagEsclusivita>0</sisrt-ric:flagEsclusivita>
+</sisrt-ric:VisualizzaErogatoRichiesta>

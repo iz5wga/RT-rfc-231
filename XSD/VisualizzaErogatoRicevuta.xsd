@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.regione.toscana.it.org/sisrt/sea"
+	    xmlns="http://www.w3.org/2001/XMLSchema" 
+	    xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea"
+	    xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic"
+	    elementFormDefault="qualified" 
+	    attributeFormDefault="unqualified">
+
+	<import schemaLocation="TipiDatiVisualizzaErogato.xsd"
+		    namespace="http://www.regione.toscana.it.org/sisrt/generic">
+    </import>
+
+	<annotation>
+		<documentation>Versione 1.2</documentation>
+	</annotation>
+	<element name="VisualizzaErogatoRicevuta">
+		<annotation>
+			<documentation>Elemento base della ricevuta per la richiesta di
+				visualizzazione della ricetta prescritta dal medico da parte
+				dell'erogatore
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="nre" type="sisrt:nreType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Numero Ricetta Elettronica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="prenotazione"
+					type="sisrt:prenotazioneType" minOccurs="0">
+				</element>
+				<element name="cfMedico1" type="sisrt:cfMedicoType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice fiscale del medico associato all'NRE
+							inviato o attribuito in fase di
+							registrazione
+						</documentation>
+					</annotation>
+				</element>
+				<element name="cfMedico2" type="sisrt:cfMedicoType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice fiscale del medico che compila la
+							ricetta elettronica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codRegione" type="sisrt:codRegioneType"
+					minOccurs="0">
+
+					<annotation>
+						<documentation>
+							Codice Regione / Provincia Autonoma del
+							medico a cui si vuole attribuire un NRE
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codASLAo" minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice ASL del medico a cui si vuole
+							attribuire un NRE
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="16"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+
+				<element name="codStruttura" minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice struttura del medico a cui si vuole
+							attribuire un NRE
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="16"></maxLength>
+						</restriction>
+					</simpleType>
+
+				</element>
+				<element name="codSpecializzazione"
+					type="sisrt:codSpecializzazioneType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Specializzazione del medico a cui si vuole
+							attribuire un NRE
+						</documentation>
+					</annotation>
+				</element>
+				<element name="testata1" type="sisrt:stringType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo destinato a informazioni aggiuntive
+						</documentation>
+					</annotation>
+				</element>
+				<element name="testata2" type="sisrt:stringType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo destinato a informazioni aggiuntive
+						</documentation>
+					</annotation>
+				</element>
+				<element name="tipoRic" type="sisrt:tipoRicettaType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Tipologia della ricetta compilata
+						</documentation>
+					</annotation>
+				</element>
+
+				<element name="codiceAss" minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice Fiscale/STP/ENI/altro che rappresenta
+							l'assistito per cui viene compilata la
+							ricetta
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="16"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="cognNome" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Cognome e nome dell'assistito
+						</documentation>
+					</annotation>
+				</element>
+				<element name="indirizzo" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Indirizzo dell'assistito
+						</documentation>
+					</annotation>
+				</element>
+				<element name="oscuramDati" nillable="true"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Dati sensibili oscurati
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="1"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="numTessSasn" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Numero tessera assistenza SASN
+						</documentation>
+					</annotation>
+				</element>
+				<element name="socNavigaz" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Societa' di navigazione
+						</documentation>
+					</annotation>
+				</element>
+				<element name="tipoPrescrizione"
+					type="sisrt:tipoPrescType" minOccurs="0">
+					<annotation>
+						<documentation>
+							F - Farmaceutica, P - Specialistica
+						</documentation>
+
+					</annotation>
+				</element>
+				<element name="ricettaInterna" minOccurs="0"
+					nillable="true">
+					<annotation>
+						<documentation>
+							La ricetta per prestazioni specialistiche
+							prescritta internamente ad una struttura
+							pubblica deve essere erogata all’interno
+							della stessa struttura
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="1"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="codEsenzione" minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice esenzione riportato in ricetta
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="6"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="nonEsente" nillable="true"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo che indica se l'assistito e' esente
+							oppure no
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="1"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="reddito" nillable="true" minOccurs="0"
+					type="sisrt:stringType">
+					<annotation>
+						<documentation>
+							Campo che indica se l'assistito e' esente
+							per reddito oppure no
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codDiagnosi" minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice diagnosi o del sospetto diagnostico
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="10"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+
+				<element name="descrizioneDiagnosi"
+					type="sisrt:stringType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Descrizione della diagnosi o del sospetto
+							diagnostico in testo libero
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dataCompilazione" type="dateTime"
+					minOccurs="0">
+					<annotation>
+
+						<documentation>
+							Data compilazione della ricetta, formato
+							aaaa-mm-gg HH:mm:ss
+						</documentation>
+					</annotation>
+				</element>
+				<element name="tipoVisita" type="sisrt:tipoVisitaType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							A - Ambulatoriale, D - Domiciliare
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dispReg" minOccurs="0">
+					<annotation>
+						<documentation>
+							Disposizioni regionali specifiche
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="8"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="provAssistito" minOccurs="0">
+					<annotation>
+						<documentation>
+							Provincia di residenza dell'assistito
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="2"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="aslAssistito" minOccurs="0">
+					<annotation>
+						<documentation>
+							Asl di residenza dell'assistito
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="3"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="indicazionePrescr"
+					type="sisrt:indicPrescType" minOccurs="0">
+					<annotation>
+						<documentation>
+							S - Suggerita, H - Ricovero
+						</documentation>
+					</annotation>
+				</element>
+				<element name="altro" type="sisrt:indicPrescType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Indicazione di trattamento di una patologia
+							cronica o non cronica per farmaceutica,
+							altro per specialistica
+						</documentation>
+					</annotation>
+				</element>
+
+				<element name="classePriorita" type="sisrt:prioritaType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Classe di priorita' della prescrizione
+						</documentation>
+					</annotation>
+				</element>
+				<element name="statoEstero" minOccurs="0">
+					<annotation>
+						<documentation>
+							Stato del soggetto assicurato da istituzioni
+							estere
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="2"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="istituzCompetente"
+					type="sisrt:string256Type" minOccurs="0">
+					<annotation>
+						<documentation>
+							Istituzione competente del soggetto
+							assicurato da istituzioni estere
+						</documentation>
+					</annotation>
+				</element>
+				<element name="numIdentPers" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Numero di identificazione personale del
+							soggetto assicurato da istituzioni estere
+						</documentation>
+					</annotation>
+				</element>
+				<element name="numIdentTess" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Numero di identificazione della tessera del
+							soggetto assicurato da istituzioni estere
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dataNascitaEstero" type="date"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Data di nascita del soggetto assicurato da
+							istituzioni estere nel formato aaaa-mm-gg
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dataScadTessera" type="date"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Data scadenza della tessera del soggetto
+							assicurato da istituzioni estere nel formato
+							aaaa-mmgg
+						</documentation>
+
+					</annotation>
+				</element>
+				<element name="statoProcesso" minOccurs="0">
+					<annotation>
+						<documentation>
+							Stato della ricetta
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="2"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="chiusuraDiff" nillable="true"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Chiusura erogazione a posteriori
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="1"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="chiusuraForzata" minOccurs="0">
+					<annotation>
+						<documentation>
+							Dichiarazione di erogazione completa di una
+							ricetta elettronica, nonostante erogazione
+							parziale di quanto in essa contenuto, su
+							esplicita richiesta dell’assistito
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="1"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="prescrizioneFruita" minOccurs="0">
+					<annotation>
+						<documentation>
+							Dichiarazione di effettiva fruizione della
+							prestazione specialistica
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="1"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="tipoErogazioneSpec" minOccurs="0">
+					<annotation>
+						<documentation>
+							Tipo erogazione della prestazione
+							specialistica
+						</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="1"></maxLength>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="ticket" type="sisrt:euroValutaType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Ammontare della quota di compartecipazione
+							alla spesa sanitaria per farmaceutica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="quotaFissa" type="sisrt:euroValutaType"
+					minOccurs="0">
+					<annotation>
+
+						<documentation>
+							Quota fissa del ticket per prestazione
+							specialistica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="franchigia" type="sisrt:euroValutaType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Franchigia del ticket per prestazione
+							specialistica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="galDirChiamAltro"
+					type="sisrt:euroValutaType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Ammontare del prezzo del galenico, del
+							diritto di chiamata spettante alla farmacia
+							in servizio notturno
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dataSpedizione" type="date"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Data di spedizione(erogazione) della ricetta
+						</documentation>
+					</annotation>
+				</element>
+				<element name="spa1Eroga" type="sisrt:spa1ErogaType" maxOccurs="1"
+					minOccurs="0">
+				</element>
+				<element name="codPagIris" type="sisrt:codPagIrisType" minOccurs="0">
+				</element>
+				
+				
+				<element name="dispRic1" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo per futuro utilizzo
+						</documentation>
+					</annotation>
+				</element>				<element name="dispRic2" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo per futuro utilizzo
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dispRic3" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo per futuro utilizzo
+						</documentation>
+					</annotation>
+				</element>
+
+				<element name="ElencoDettagliPrescrVisualErogato"
+					type="sisrt:elencoDettagliPrescrVisualErogatoType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Elenco singole prescrizioni visualizzazione
+							erogato
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codAutenticazioneMedico"
+					type="sisrt:stringType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice di autenticazione che certifica il
+							corretto inserimento da parte del medico
+							della ricetta sul SAC
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codAutenticazioneErogatore"
+					type="sisrt:stringType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice di autenticazione per l’erogatore che
+							certifica l’avvenuta transazione
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codEsitoVisualizzazione"
+					type="sisrt:codEsitoType">
+					<annotation>
+						<documentation>
+							Codice dell'esito della visualizzazione
+						</documentation>
+					</annotation>
+				</element>
+				<element name="ElencoErroriRicette"
+					type="sisrt:elencoErroriRicetteType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Ripetizione di ErroreRicetta
+						</documentation>
+					</annotation>
+				</element>
+				<element name="ElencoComunicazioni"
+					type="sisrt:elencoComunicazioniType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Ripetizione di Comunicazioni
+						</documentation>
+					</annotation>
+				</element>
+				<element name="strutturaDiPresaInCarico"
+					type="sisrt:strutturaDiPresaInCaricoType" minOccurs="0">
+				</element>
+				<element name="tipoGestione"
+					type="sisrt:tipoGestioneType" minOccurs="0">
+				</element>
+
+			</sequence>
+		</complexType>
+	</element>
+</schema>

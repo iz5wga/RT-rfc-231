@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.regione.toscana.it.org/sisrt/sea"
+	    xmlns="http://www.w3.org/2001/XMLSchema" 
+	    xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea"
+	    xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic"
+	    elementFormDefault="qualified" 
+	    attributeFormDefault="unqualified">
+
+	<import schemaLocation="TipiDatiInviaErogato.xsd"
+		    namespace="http://www.regione.toscana.it.org/sisrt/generic">
+    </import>
+
+	<annotation>
+		<documentation>Versione 1.2</documentation>
+	</annotation>
+	<element name="InvioErogatoRichiesta">
+		<annotation>
+			<documentation>Elemento base per la richiesta di invio della ricetta
+				           da parte dell'erogatore
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="codiceAslErogatore"
+					type="sisrt:stringType">
+					<annotation>
+						<documentation>
+							Codice ASL della struttura erogatrice
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codiceSsaErogatore"
+					type="sisrt:stringType">
+					<annotation>
+
+						<documentation>
+							Codice SSA della struttura erogatrice
+						</documentation>
+					</annotation>
+				</element>
+                <element name="pwd" type="sisrt:pwdType" maxOccurs="1" minOccurs="0"></element>
+                <element name="nre" type="sisrt:nreType">
+					<annotation>
+						<documentation>
+							Numero Ricetta Elettronica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="cfAssistito" type="sisrt:stringType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice fiscale dell’assistito prelevato
+							dalla Tessera Sanitaria
+						</documentation>
+					</annotation>
+				</element>
+				<element name="tipoOperazione"
+					type="sisrt:tipoOperazioneType">
+					<annotation>
+						<documentation>
+							31 - Erogazione totale, 32 - Erogazione
+							parziale, 33 - Erogazione parziale con
+							chiusura forzata, 34 - Erogazione differita
+							totale, 35 - Erogazione differita con
+							chiusura forzata
+						</documentation>
+					</annotation>
+				</element>
+				<element name="prescrizioneFruita"
+					type="sisrt:stringType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Dichiarazione di effettiva fruizione della
+							prestazione specialistica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="tipoErogazioneSpec"
+					type="sisrt:stringType" minOccurs="0">
+					<annotation>
+						<documentation>
+							Tipo erogazione della prestazione
+							specialistica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="ticket" type="sisrt:stringType"
+					minOccurs="0">
+					<annotation>
+
+						<documentation>
+							Ammontare della quota di compartecipazione
+							alla spesa sanitaria per farmaceutica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="quotaFissa" type="sisrt:stringType">
+					<annotation>
+						<documentation>
+							Quota fissa del ticket per prestazione
+							specialistica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="franchigia" type="sisrt:stringType">
+					<annotation>
+						<documentation>
+							Franchigia del ticket per prestazione
+							specialistica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="galDirChiamAltro"
+					type="sisrt:stringType">
+					<annotation>
+						<documentation>
+							Ammontare del prezzo del galenico, del
+							diritto di chiamata spettante alla farmacia
+							in servizio notturno
+						</documentation>
+					</annotation>
+				</element>
+				<element name="reddito" type="sisrt:stringType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo che indica se l’assistito e' esente
+							per reddito oppure no: null - non esente, 1
+							- esente
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dataSpedizione"
+					type="sisrt:dataOraType">
+					<annotation>
+						<documentation>
+							Data di spedizione(erogazione) della ricetta
+						</documentation>
+					</annotation>
+				</element>
+                <element name="spa1Eroga" type="sisrt:spa1ErogaType" minOccurs="0"></element>
+                <element name="codPagIris" type="sisrt:codPagIrisType" minOccurs="0">
+				</element>
+
+                <element name="dispRic1" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo per futuro utilizzo
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dispRic2" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+
+						<documentation>
+							Campo per futuro utilizzo
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dispRic3" type="sisrt:string256Type"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Campo per futuro utilizzo
+						</documentation>
+					</annotation>
+				</element>
+				<element name="ElencoDettagliPrescrInviiErogato"
+					type="sisrt:elencoDettagliPrescrInviiErogatoType">
+					<annotation>
+						<documentation>
+							Elenco singole prescrizioni invio erogato
+						</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

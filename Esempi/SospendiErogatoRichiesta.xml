@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sisrt-ric:SospendiErogatoRichiesta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/SospendiErogatoRichiesta.xsd ">
+  <sisrt-ric:codiceAslErogatore>108</sisrt-ric:codiceAslErogatore>
+  <sisrt-ric:codiceSsaErogatore>108</sisrt-ric:codiceSsaErogatore>
+  <sisrt-ric:pwd>AAABBB11L45F656Y</sisrt-ric:pwd>
+  <sisrt-ric:nre>090123456789012</sisrt-ric:nre>
+  <sisrt-ric:cfAssistito>PPRPPR26S16D118H</sisrt-ric:cfAssistito>
+  <sisrt-ric:tipoOperazione>21</sisrt-ric:tipoOperazione>
+</sisrt-ric:SospendiErogatoRichiesta>

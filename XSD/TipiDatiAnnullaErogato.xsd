@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.regione.toscana.it.org/sisrt/generic"
+	    xmlns="http://www.w3.org/2001/XMLSchema" 
+	    xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic"
+	    elementFormDefault="qualified" 
+	    attributeFormDefault="unqualified">
+	    
+	<annotation>
+		<documentation>Versione 1.2</documentation>
+	</annotation>
+	<simpleType name="nreType">
+		<restriction base="string">
+			<minLength value="15" />
+			<maxLength value="15" />
+		</restriction>
+	</simpleType>
+	<simpleType name="pwdType">
+		<restriction base="string">
+			<minLength value="0" />
+			<maxLength value="16" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoOperazioneType">
+		<restriction base="string">
+			<length value="2"></length>
+		</restriction>
+	</simpleType>
+	<simpleType name="dichTargaDoppiaType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="dichVariazTargaType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="codRegioneType">
+		<restriction base="string">
+			<minLength value="3" />
+			<maxLength value="3" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="codSpecializzazioneType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="cfMedicoType">
+		<restriction base="string">
+			<minLength value="0" />
+			<maxLength value="16" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoInvioType">
+		<restriction base="string">
+			<minLength value="3" />
+			<maxLength value="3" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoRicettaType">
+		<restriction base="string">
+			<minLength value="2" />
+			<maxLength value="2" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoPrescType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="tipoVisitaType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="indicPrescType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="prioritaType">
+		<restriction base="string">
+			<minLength value="1" />
+			<maxLength value="1" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="dataOraType">
+		<restriction base="string">
+			<minLength value="19" />
+			<maxLength value="19" />
+		</restriction>
+	</simpleType>
+	<simpleType name="codEsitoType">
+		<restriction base="string">
+			<pattern value="[0-9]{4}" />
+		</restriction>
+	</simpleType>
+	<simpleType name="stringType">
+		<restriction base="string" />
+	</simpleType>
+	<simpleType name="string256Type">
+		<restriction base="string">
+			<maxLength value="256" />
+		</restriction>
+	</simpleType>
+	<simpleType name="string16Type">
+		<restriction base="string">
+
+			<maxLength value="16"></maxLength>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="string10Type">
+		<restriction base="string">
+			<maxLength value="10"></maxLength>
+		</restriction>
+	</simpleType>
+	<simpleType name="string8Type">
+		<restriction base="string">
+			<maxLength value="8"></maxLength>
+		</restriction>
+	</simpleType>
+	<simpleType name="integerType">
+		<restriction base="string">
+			<pattern value="[0-9]" />
+		</restriction>
+	</simpleType>
+	<complexType name="erroreRicettaType">
+		<sequence>
+			<element name="codEsito" type="sisrt:codEsitoType" />
+			<element name="esito" type="sisrt:stringType" minOccurs="0" />
+			<element name="progPresc" type="sisrt:stringType" minOccurs="0" />
+			<element name="tipoErrore" type="sisrt:stringType" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="elencoErroriRicetteType">
+		<sequence>
+			<element name="ErroreRicetta" type="sisrt:erroreRicettaType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="comunicazioneType">
+		<sequence>
+			<element name="codice" type="sisrt:stringType">
+				<annotation>
+					<documentation>Codice della comunicazione di servizio
+					</documentation>
+				</annotation>
+			</element>
+			<element name="messaggio" type="sisrt:stringType">
+
+				<annotation>
+					<documentation>Messaggio di servizio
+					</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="elencoComunicazioniType">
+		<sequence>
+			<element name="Comunicazione" type="sisrt:comunicazioneType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+</schema>

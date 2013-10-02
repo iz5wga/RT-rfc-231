@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Risposta in caso di stato bloccato e asl richiedente diversa da bloccante -->
+<sisrt-ric:VisualizzaErogatoRicevuta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/VisualizzaErogatoRicevuta.xsd ">
+  <sisrt-ric:nre>090123456789012</sisrt-ric:nre>
+    <sisrt-ric:codiceAss>PPRPPR26S16D118H</sisrt-ric:codiceAss>
+  <sisrt-ric:cognNome>De Paperoni Paperone</sisrt-ric:cognNome>
+    <sisrt-ric:statoProcesso>5</sisrt-ric:statoProcesso>
+    <sisrt-ric:codEsitoVisualizzazione>0000</sisrt-ric:codEsitoVisualizzazione>
+  <sisrt-ric:strutturaDiPresaInCarico>108</sisrt-ric:strutturaDiPresaInCarico>
+  <sisrt-ric:tipoGestione>DM2011</sisrt-ric:tipoGestione>
+</sisrt-ric:VisualizzaErogatoRicevuta>

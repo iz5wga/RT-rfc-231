@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sisrt-ric:InvioErogatoRichiesta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/InvioErogatoRichiesta.xsd ">
+  <sisrt-ric:codiceAslErogatore>108</sisrt-ric:codiceAslErogatore>
+  <sisrt-ric:codiceSsaErogatore>108</sisrt-ric:codiceSsaErogatore>
+  <sisrt-ric:pwd>AAABBB11L45F656Y</sisrt-ric:pwd>
+  <sisrt-ric:nre>090123456789012</sisrt-ric:nre>
+  <sisrt-ric:cfAssistito>PPRPPR26S16D118H</sisrt-ric:cfAssistito>
+  <sisrt-ric:tipoOperazione>31</sisrt-ric:tipoOperazione>
+  <sisrt-ric:prescrizioneFruita>1</sisrt-ric:prescrizioneFruita>
+  <sisrt-ric:ticket>0.45</sisrt-ric:ticket>
+  <sisrt-ric:quotaFissa>5</sisrt-ric:quotaFissa>
+  <sisrt-ric:franchigia>0.0</sisrt-ric:franchigia>
+  <sisrt-ric:galDirChiamAltro>0.0</sisrt-ric:galDirChiamAltro>
+  <sisrt-ric:reddito>1</sisrt-ric:reddito>
+  <sisrt-ric:dataSpedizione>2013-06-25T12:00:00</sisrt-ric:dataSpedizione>
+  <sisrt-ric:codPagIris>123456789012345</sisrt-ric:codPagIris>
+  <sisrt-ric:ElencoDettagliPrescrInviiErogato>
+    <sisrt:DettaglioPrescrizioneInvioErogato>
+      <sisrt:codProdPrest>19655152</sisrt:codProdPrest>
+      <sisrt:codProdPrestErog>19655152</sisrt:codProdPrestErog>
+      <sisrt:descrProdPrestErog>Betametasone fosfato disodico</sisrt:descrProdPrestErog>
+      <sisrt:flagErog>1</sisrt:flagErog>
+      <sisrt:targa>000798459</sisrt:targa>
+      <sisrt:tipoErogazioneFarm>0</sisrt:tipoErogazioneFarm>
+      <sisrt:prezzo>0.45</sisrt:prezzo>
+      <sisrt:ticketConfezione>5</sisrt:ticketConfezione>
+      <sisrt:diffGenerico>0</sisrt:diffGenerico>
+      <sisrt:quantitaErogata>1</sisrt:quantitaErogata>
+      <sisrt:dataIniErog>2013-06-25T12:00:00</sisrt:dataIniErog>
+      <sisrt:dataFineErog>2013-06-25T12:00:00</sisrt:dataFineErog>
+      <sisrt:prezzoRimborso>0</sisrt:prezzoRimborso>
+      <sisrt:onereProd>0</sisrt:onereProd>
+      <sisrt:scontoSSN>0</sisrt:scontoSSN>
+      <sisrt:extraScontoIndustria>0</sisrt:extraScontoIndustria>
+      <sisrt:extraScontoPayback>0</sisrt:extraScontoPayback>
+      <sisrt:extraScontoDL31052010>0</sisrt:extraScontoDL31052010>
+    </sisrt:DettaglioPrescrizioneInvioErogato>
+  </sisrt-ric:ElencoDettagliPrescrInviiErogato>
+</sisrt-ric:InvioErogatoRichiesta>

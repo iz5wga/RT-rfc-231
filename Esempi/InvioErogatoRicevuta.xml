@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sisrt-ric:InvioErogatoRicevuta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/InvioErogatoRicevuta.xsd ">
+  <sisrt-ric:nre>090123456789012</sisrt-ric:nre>
+  <sisrt-ric:dataRicezione>2013-06-25T12:01:00</sisrt-ric:dataRicezione>
+  <sisrt-ric:codEsitoInserimento>0000</sisrt-ric:codEsitoInserimento>
+</sisrt-ric:InvioErogatoRicevuta>

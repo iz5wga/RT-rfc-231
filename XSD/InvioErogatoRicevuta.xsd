@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.regione.toscana.it.org/sisrt/sea"
+	    xmlns="http://www.w3.org/2001/XMLSchema" 
+	    xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea"
+	    xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic"
+	    elementFormDefault="qualified" 
+	    attributeFormDefault="unqualified">
+
+	<import schemaLocation="TipiDatiInviaErogato.xsd"
+     		namespace="http://www.regione.toscana.it.org/sisrt/generic">
+    </import>
+
+	<annotation>
+		<documentation>Versione 1.2</documentation>
+	</annotation>
+	<element name="InvioErogatoRicevuta">
+		<annotation>
+			<documentation>Elemento base della ricevuta per la richiesta di 				invio
+				           della ricetta da parte dell'erogatore
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="nre" type="sisrt:nreType" minOccurs="0">
+					<annotation>
+						<documentation>Numero Ricetta Elettronica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="dataRicezione" type="sisrt:dataOraType"
+					minOccurs="0">
+					<annotation>
+						<documentation>Data di ricezione
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codAutenticazione" type="sisrt:stringType"
+					minOccurs="0">
+					<annotation>
+						<documentation>Codice di autenticazione per l’erogatore che
+							           certifica l’avvenuta transazione
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codEsitoInserimento" type="sisrt:codEsitoType">
+					<annotation>
+						<documentation>Codice dell'esito dell'invio
+						</documentation>
+					</annotation>
+				</element>
+				<element name="ElencoErroriRicette" type="sisrt:elencoErroriRicetteType"
+					minOccurs="0">
+					<annotation>
+						<documentation>Ripetizione di ErroreRicetta
+						</documentation>
+					</annotation>
+				</element>
+				<element name="ElencoComunicazioni" type="sisrt:elencoComunicazioniType"
+					minOccurs="0">
+					<annotation>
+						<documentation>Ripetizione di Comunicazioni
+						</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

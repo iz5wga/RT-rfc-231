@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sisrt-ric:SospendiErogatoRicevuta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/SospendiErogatoRicevuta.xsd ">
+  <sisrt-ric:codEsitoSospensione>0000</sisrt-ric:codEsitoSospensione>
+</sisrt-ric:SospendiErogatoRicevuta>

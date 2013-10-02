@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sisrt-ric:VisualizzaErogatoRicevuta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/VisualizzaErogatoRicevuta.xsd ">
+  <sisrt-ric:nre>090123456789012</sisrt-ric:nre>
+  <sisrt-ric:cfMedico1>CCCDDD50A25H912M</sisrt-ric:cfMedico1>
+  <sisrt-ric:codRegione>090</sisrt-ric:codRegione>
+  <sisrt-ric:codASLAo>108</sisrt-ric:codASLAo>
+  <sisrt-ric:codStruttura>108</sisrt-ric:codStruttura>
+  <sisrt-ric:statoProcesso>5</sisrt-ric:statoProcesso>
+  <sisrt-ric:codEsitoVisualizzazione>0000</sisrt-ric:codEsitoVisualizzazione>
+  <sisrt-ric:strutturaDiPresaInCarico>108</sisrt-ric:strutturaDiPresaInCarico>
+  <sisrt-ric:tipoGestione>DM2011</sisrt-ric:tipoGestione>
+</sisrt-ric:VisualizzaErogatoRicevuta>

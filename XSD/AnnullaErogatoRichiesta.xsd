@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.regione.toscana.it.org/sisrt/sea"
+	    xmlns="http://www.w3.org/2001/XMLSchema" 
+	    xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea"
+	    xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic"
+	    elementFormDefault="qualified" 
+	    attributeFormDefault="unqualified">
+
+	<import schemaLocation="TipiDatiAnnullaErogato.xsd"
+		    namespace="http://www.regione.toscana.it.org/sisrt/generic">
+    </import>
+    
+	<annotation>
+		<documentation>Versione 1.2</documentation>
+	</annotation>
+	<element name="AnnullaErogatoRichiesta">
+		<annotation>
+			<documentation>Elemento base per la richiesta di annullamento della
+				           ricetta da parte dell'erogatore
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="codiceAslErogatore"
+					type="sisrt:stringType">
+					<annotation>
+						<documentation>
+							Codice ASL della struttura erogatrice
+						</documentation>
+					</annotation>
+				</element>
+				<element name="codiceSsaErogatore"
+					type="sisrt:stringType">
+					<annotation>
+						<documentation>
+							Codice SSA della struttura erogatrice
+						</documentation>
+					</annotation>
+				</element>
+                <element name="pwd" type="string" minOccurs="0"></element>
+                <element name="nre" type="sisrt:nreType">
+					<annotation>
+						<documentation>
+							Numero Ricetta Elettronica
+						</documentation>
+					</annotation>
+				</element>
+				<element name="cfAssistito" type="sisrt:stringType"
+					minOccurs="0">
+					<annotation>
+						<documentation>
+							Codice fiscale dell’assistito prelevato
+							dalla Tessera Sanitaria
+						</documentation>
+					</annotation>
+				</element>
+
+				<element name="tipoOperazione"
+					type="sisrt:tipoOperazioneType">
+					<annotation>
+						<documentation>
+							41 - Annullamento erogazione
+						</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

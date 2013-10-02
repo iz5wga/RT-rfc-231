@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sisrt-ric:AnnullaErogatoRicevuta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/AnnullaErogatoRicevuta.xsd ">
+  <sisrt-ric:nre>090123456789012</sisrt-ric:nre>
+  <sisrt-ric:dataRicezione>2013-06-25T15:00:00</sisrt-ric:dataRicezione>
+  <sisrt-ric:codEsitoAnnullamento>0000</sisrt-ric:codEsitoAnnullamento>
+</sisrt-ric:AnnullaErogatoRicevuta>

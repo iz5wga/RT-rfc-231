@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sisrt-ric:VisualizzaErogatoRicevuta xmlns:sisrt="http://www.regione.toscana.it.org/sisrt/generic" xmlns:sisrt-ric="http://www.regione.toscana.it.org/sisrt/sea" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.regione.toscana.it.org/sisrt/sea ../XSD/VisualizzaErogatoRicevuta.xsd ">
+  <sisrt-ric:nre>090123456789012</sisrt-ric:nre>
+  <sisrt-ric:cfMedico1>CCCDDD50A25H912M</sisrt-ric:cfMedico1>
+  <sisrt-ric:codRegione>090</sisrt-ric:codRegione>
+  <sisrt-ric:codASLAo>108</sisrt-ric:codASLAo>
+  <sisrt-ric:codStruttura>108</sisrt-ric:codStruttura>
+  <sisrt-ric:codSpecializzazione>F</sisrt-ric:codSpecializzazione>
+  <sisrt-ric:codiceAss>PPRPPR26S16D118H</sisrt-ric:codiceAss>
+  <sisrt-ric:cognNome>De Paperoni Paperone</sisrt-ric:cognNome>
+  <sisrt-ric:indirizzo>Via Paperi 113, Paperopoli</sisrt-ric:indirizzo>
+  <sisrt-ric:tipoPrescrizione>F</sisrt-ric:tipoPrescrizione>
+  <sisrt-ric:ricettaInterna></sisrt-ric:ricettaInterna>
+  <sisrt-ric:nonEsente>1</sisrt-ric:nonEsente><sisrt-ric:reddito></sisrt-ric:reddito>
+  <sisrt-ric:descrizioneDiagnosi>Stato febbrile</sisrt-ric:descrizioneDiagnosi>
+  <sisrt-ric:dataCompilazione>2013-06-25T12:00:00</sisrt-ric:dataCompilazione>
+  <sisrt-ric:dispReg>ERB</sisrt-ric:dispReg>
+  <sisrt-ric:provAssistito>AR</sisrt-ric:provAssistito>
+  <sisrt-ric:aslAssistito>108</sisrt-ric:aslAssistito>
+  <sisrt-ric:indicazionePrescr>S</sisrt-ric:indicazionePrescr>
+  <sisrt-ric:statoProcesso>5</sisrt-ric:statoProcesso>
+  <sisrt-ric:ticket>0.45</sisrt-ric:ticket>
+  <sisrt-ric:quotaFissa>5</sisrt-ric:quotaFissa>
+  <sisrt-ric:franchigia>0.0</sisrt-ric:franchigia>
+  <sisrt-ric:galDirChiamAltro>0.0</sisrt-ric:galDirChiamAltro>
+  <sisrt-ric:dataSpedizione>2013-06-25</sisrt-ric:dataSpedizione>
+  <sisrt-ric:codPagIris>123456789012345</sisrt-ric:codPagIris>
+  <sisrt-ric:ElencoDettagliPrescrVisualErogato>
+    <sisrt:DettaglioPrescrizioneVisualErogato>
+      <sisrt:statoPresc>1</sisrt:statoPresc>
+      <sisrt:codProdPrest>19655152</sisrt:codProdPrest>
+      <sisrt:descrProdPrest>Betametasone fosfato disodico</sisrt:descrProdPrest>
+      <sisrt:nonSost>null</sisrt:nonSost>
+      <sisrt:quantita>1</sisrt:quantita>
+      <sisrt:dichTargaDoppia></sisrt:dichTargaDoppia>
+    </sisrt:DettaglioPrescrizioneVisualErogato>
+  </sisrt-ric:ElencoDettagliPrescrVisualErogato>
+  <sisrt-ric:codEsitoVisualizzazione>0000</sisrt-ric:codEsitoVisualizzazione>
+  <sisrt-ric:strutturaDiPresaInCarico>108</sisrt-ric:strutturaDiPresaInCarico>
+  <sisrt-ric:tipoGestione>DM2011</sisrt-ric:tipoGestione>
+</sisrt-ric:VisualizzaErogatoRicevuta>
